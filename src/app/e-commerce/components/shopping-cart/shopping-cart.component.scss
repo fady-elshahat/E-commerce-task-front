@@ -1,0 +1,8 @@
+@use '../../../../assets/shared/style/mixin' as *;
+
+#shopping {
+  .title {
+    @include headLine1;
+    color: var(--color-primary);
+  }
+}

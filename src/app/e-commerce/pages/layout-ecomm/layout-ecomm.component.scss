@@ -1,0 +1,32 @@
+@use '../../../../assets/shared/style/mixin' as *;
+
+#layout {
+  .title {
+    .desc {
+      @include headLine1;
+
+      &-2 {
+        @include headLine4;
+        margin-bottom: 10px;
+      }
+    }
+
+    .line {
+      width: 70%;
+      background-color: var(--bg-gray);
+      height: 1px;
+    }
+
+    .btn-all {
+      @include headLine6;
+      border-color: var(--color-primary);
+      border-width: 2px;
+
+      &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+    }
+
+  }
+}

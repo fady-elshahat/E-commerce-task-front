@@ -1,0 +1,29 @@
+<div class="card position-relative">
+  <img [src]="cardData.imgSrc" class="card-img-top " alt="item img" width="297" height="261">
+  <div class="card-body">
+    <h5 class="card-title">{{cardData.name}}</h5>
+    <star-rating [value]="cardData!.rate" [totalstars]="5" checkedcolor="#ffe621" uncheckedcolor="#eaeaea" size="20px"
+      [readonly]="true">
+    </star-rating>
+    <p class="desc" *ngIf="cardData.descount">{{cardData.descount}} ج.م</p>
+    <p class="salary"> {{cardData.price}} ج.م</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="btn btn-add-card" (click)="addCard(cardData.id)" *ngIf="!showAddItems">
+        <img src="assets/img/icons/add_shopping_cart-black-18dp.svg" alt="shopping_cart">
+        اضف للسلة
+      </button>
+
+      <div class="more-btn d-flex justify-content-between align-items-center w-25">
+        <span class="btn-share">
+          <img src="../../../../assets/img/icons/share.svg" alt="share icon">
+        </span>
+        <span class="btn-favorite">
+          <i class="fa-solid fa-heart"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="status position-absolute">
+    <span [ngClass]="cardData.status == 'جديد' ? 'label new' : 'label show'">{{cardData.status}}</span>
+  </div>
+</div>

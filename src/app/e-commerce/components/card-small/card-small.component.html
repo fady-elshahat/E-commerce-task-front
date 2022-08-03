@@ -1,0 +1,31 @@
+<div class="card position-relative d-flex flex-row align-items-center">
+  <div class="w-25">
+    <img [src]="cardBrowseData.imgSrc" class="img-fluid" alt="item img">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{cardBrowseData.name}}</h5>
+    <star-rating [value]="cardBrowseData.rate" [totalstars]="5" checkedcolor="#ffe621" uncheckedcolor="#eaeaea"
+      size="20px" [readonly]="true">
+    </star-rating>
+    <p class="desc" *ngIf="cardBrowseData.descount">{{cardBrowseData.descount}} ج.م</p>
+    <p class="salary"> {{cardBrowseData.price}} ج.م</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="btn btn-outline-light" (click)="addCard(cardBrowseData.id)">
+        <img src="assets/img/icons/add_shopping_cart-black-18dp (1).svg" alt="shopping_cart">
+      </button>
+
+      <div class="more-btn d-flex justify-content-between align-items-center w-25">
+        <span class="btn-share">
+          <img src="../../../../assets/img/icons/share.svg" alt="share icon">
+        </span>
+        <span class="btn-favorite">
+          <i class="fa-solid fa-heart"></i>
+        </span>
+      </div>
+    </div>
+    <div class="status position-absolute">
+      <span [ngClass]="cardBrowseData.status == 'جديد' ? 'label new' : 'label show'">{{cardBrowseData.status}}</span>
+    </div>
+  </div>
+
+</div>

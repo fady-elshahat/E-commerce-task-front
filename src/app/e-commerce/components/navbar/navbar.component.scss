@@ -1,0 +1,68 @@
+@use '../../../../assets/shared/style/mixin' as *;
+
+.navbar {
+  padding-block: 24px;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+
+  .search {
+    position: relative;
+    width: 70%;
+
+    input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 10px 40px;
+      background-color: rgba(48, 44, 162, 0.08);
+      border-radius: 10px;
+      @include caption;
+
+      &::placeholder {
+        @include caption;
+      }
+    }
+
+    i {
+      position: absolute;
+      right: 13px;
+      color: var(--color-primary);
+    }
+  }
+
+  .navbar-nav {
+
+
+    .nav-item {
+
+      margin-inline-start: 15px;
+
+      .btn-nav {
+        background-color: rgba(48, 44, 162, 0.08);
+        @include title;
+
+        &.shopping {
+          position: relative;
+
+          img {
+            padding-inline-start: 15px;
+          }
+
+          span {
+            position: absolute;
+            height: 20px;
+            color: var(--color-white);
+            width: 20px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: -10px;
+            left: -5px;
+          }
+        }
+      }
+    }
+  }
+}

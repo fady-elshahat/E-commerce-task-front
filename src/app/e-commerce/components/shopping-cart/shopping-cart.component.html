@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+
+<section id="shopping">
+  <h2 class="title my-4">سلة التسوق</h2>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-3" *ngFor="let item of productsShopping">
+        <app-card-item [cardData]="item"></app-card-item>
+      </div>
+    </div>
+  </div>
+</section>

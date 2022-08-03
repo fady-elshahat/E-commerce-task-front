@@ -1,0 +1,35 @@
+<app-navbar [itemsShopping]="itemsChooesShopping.length"></app-navbar>
+<app-wrapper-slider></app-wrapper-slider>
+
+<section id="layout">
+  <div class="container-fluid">
+    <div class="row justify-content-between align-items-start">
+      <div class=" col-lg-3 col-md-5 ">
+        <div class="row justify-content-start align-items-start">
+          <div class="title d-flex justify-content-between align-items-center mt-2 mb-3">
+            <span class="desc-2">منتجات تصفحتها مؤخرا</span>
+          </div>
+          <div class="col-md-12 mb-3" *ngFor="let item of itemsBrowseCard">
+            <app-card-small [cardBrowseData]="item" (idBrowsItem)="idBrowsItem($event)"></app-card-small>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-9 col-md-7 ">
+        <div class="row justify-content-start align-items-start">
+          <div class="title d-flex justify-content-between align-items-center mt-2 mb-3">
+            <span class="desc">وصل حديثا</span>
+            <span class="line"> </span>
+            <button class="btn btn-all">عرض الكل</button>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 mb-3" *ngFor="let item of itemsCard">
+            <app-card-item [cardData]="item" (idItem)="idItem($event)"></app-card-item>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
